@@ -251,7 +251,48 @@ export function createFallbackDiagnosis(
   const hidden = teaTypes[hiddenKey];
   const mood = answers[0]?.answer ?? "自分の時間を大切にしたい";
   const ending = answers[answers.length - 1]?.answer ?? "心地よく一日を終えたい";
+  const typeWords: Record<
+  TeaKey,
+  { word: string; meaning: string }
+> = {
+  matcha: {
+    word: "一期一会",
+    meaning:
+      "今日の出会いと時間を大切に。今この瞬間を丁寧に味わって。",
+  },
 
+  hojicha: {
+    word: "和顔愛語",
+    meaning:
+      "やわらかな表情とやさしい言葉が、周りの心まで温めます。",
+  },
+
+  wakoucha: {
+    word: "花鳥風月",
+    meaning:
+      "身近な美しさに気づく心が、今日を少し華やかにします。",
+  },
+
+  kuwacha: {
+    word: "日々是好日",
+    meaning:
+      "どんな一日にも、その日だけのよさがあります。",
+  },
+
+  biwa: {
+    word: "明鏡止水",
+    meaning:
+      "静かな心で向き合えば、本当に大切なものが見えてきます。",
+  },
+
+  rooibos: {
+    word: "笑門来福",
+    meaning:
+      "笑顔のある場所には、自然と幸せが集まってきます。",
+  },
+};
+
+const selectedWord = typeWords[mainKey];
   return {
     summary: main.description,
     hiddenInsight: `${hidden.hidden}も、あなたの大切な一面です。親しい人の前や、気持ちに余裕がある時に自然と表れます。`,
