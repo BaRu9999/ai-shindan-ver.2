@@ -61,7 +61,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "濃厚な香りとほどよい甘さで、気持ちをゆっくり整える組み合わせ。",
     productIcon: "🍵",
     price: "¥1529(税込)",
-    image: null,
+    image: "/mattcha type.png",
   },
   hojicha: {
     name: "ほうじ茶",
