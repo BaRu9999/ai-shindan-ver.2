@@ -293,13 +293,20 @@ export function createFallbackDiagnosis(
 };
 
 const selectedWord = typeWords[mainKey];
-  return {
-    summary: main.description,
-    hiddenInsight: `${hidden.hidden}も、あなたの大切な一面です。親しい人の前や、気持ちに余裕がある時に自然と表れます。`,
-    today: `今日は「${mood}」という気持ちが強いようです。「${ending}」と思える時間を、自分のために少しだけ作ってみてください。`,
-    caution: main.caution,
-    recommendationReason: main.productNote,
-    word: "一期一会",
-    wordMeaning: "今日の気分との出会いも一度きり。今の自分を丁寧に味わって。",
-  };
-}
+
+return {
+  summary: main.description,
+
+  hiddenInsight:
+    `${hidden.hidden}も、あなたの大切な一面です。親しい人の前や、気持ちに余裕がある時に自然と表れます。`,
+
+  today:
+    `今日は「${mood}」という気持ちが強いようです。「${ending}」と思える時間を、自分のために少しだけ作ってみてください。`,
+
+  caution: main.caution,
+
+  recommendationReason: main.productNote,
+
+  word: selectedWord.word,
+  wordMeaning: selectedWord.meaning,
+};
