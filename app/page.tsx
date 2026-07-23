@@ -92,7 +92,7 @@ export default function Home() {
     const text = `私は「${mainTea.name}タイプ」でした！あなたも診断して、2人の相性を見てみてね。`;
     try {
       if (navigator.share) {
-        await navigator.share({ title: "和茶タイプ相性診断", text, url });
+        await navigator.share({ title: "AI茶タイプ相性診断", text, url });
         setShareStatus("共有画面を開きました");
       } else {
         await navigator.clipboard.writeText(`${text}\n${url}`);
@@ -201,7 +201,7 @@ export default function Home() {
     ctx.font = "500 34px serif";
     ctx.fillText("祇園茶寮 × タニタカフェ", 540, 105);
     ctx.font = "32px serif";
-    ctx.fillText("今日の和茶タイプ診断", 540, 180);
+    ctx.fillText("今日のAI茶タイプ診断", 540, 180);
 
     ctx.fillStyle = "#263728";
     ctx.font =
@@ -249,7 +249,7 @@ if (!imageBlob) {
 
 const file = new File(
   [imageBlob],
-  "今日の和茶タイプ診断.png",
+  "今日のAI茶タイプ診断.png",
   { type: "image/png" },
 );
 
@@ -261,7 +261,7 @@ if (
 ) {
   try {
     await navigator.share({
-      title: "今日の和茶タイプ診断",
+      title: "今日のAI茶タイプ診断",
       text: `${mainTea.name}タイプになりました！`,
       files: [file],
     });
@@ -279,7 +279,7 @@ const imageUrl = URL.createObjectURL(imageBlob);
 const link = document.createElement("a");
 
 link.href = imageUrl;
-link.download = "今日の和茶タイプ診断.png";
+link.download = "今日のAI茶タイプ診断.png";
 link.target = "_blank";
 
 document.body.appendChild(link);
@@ -303,7 +303,7 @@ window.setTimeout(() => {
             <p>祇園茶寮 × タニタカフェ</p>
             <span>柏の葉店</span>
           </div>
-          <span className="preview-badge">和茶診断</span>
+          <span className="preview-badge">AI茶タイプ診断</span>
         </header>
 
         {stage === "intro" && (
@@ -311,10 +311,10 @@ window.setTimeout(() => {
             <p className="eyebrow">7つの質問でわかる</p>
             <h1>
               今日の
-              <span>和茶タイプ診断</span>
+              <span>AI茶タイプ診断</span>
             </h1>
             <p className="intro-copy">
-              {inviterMain ? <><strong>{teaTypes[inviterMain].name}タイプ</strong>のお友達から<br />相性診断が届きました。</> : <>今のあなたに合う和茶タイプと、<br />今日おすすめのメニューが分かります。</>}
+              {inviterMain ? <><strong>{teaTypes[inviterMain].name}タイプ</strong>のお友達から<br />相性診断が届きました。</> : <>AIが今のあなたに合う茶タイプと、<br />今日おすすめのメニューが分かります。</>}
             </p>
 
             {inviterMain && <div className="invitation-note"><span>{teaTypes[inviterMain].icon}</span>診断後に、2人の相性が表示されます</div>}
@@ -349,7 +349,7 @@ window.setTimeout(() => {
         {stage === "quiz" && (
           <div className="quiz-screen screen-enter">
             <div className="progress-head">
-              <span>今日のあなたを抽出中</span>
+              <span>AIが今のあなたを抽出中...</span>
               <strong>
                 {questionIndex + 1}
                 <small> / {questions.length}</small>
@@ -427,14 +427,14 @@ window.setTimeout(() => {
               <br />
               一杯のお茶に抽出しています…
             </h2>
-            <p>今日のあなたに合う和茶を選んでいます</p>
+            <p>性格傾向と今日の気分に合う和茶を選んでいます</p>
           </div>
         )}
 
         {stage === "result" && (
           <div className="result-screen screen-enter">
             <div className="result-heading">
-              <p className="eyebrow">今日のあなたは</p>
+              <p className="eyebrow">AIが分析した今日のあなたは</p>
               <div className="type-icons">
                 <span>{mainTea.icon}</span>
                 <i>×</i>
@@ -452,12 +452,12 @@ window.setTimeout(() => {
 
             <section className="dual-type-card">
               <div>
-                <span>MAIN TYPE</span>
+                <span>AI分析・メインタイプ</span>
                 <strong style={{ color: mainTea.color }}>{mainTea.core}</strong>
                 <p>{diagnosis.summary}</p>
               </div>
               <div>
-                <span>HIDDEN TYPE</span>
+                <span>AI分析・隠れタイプ</span>
                 <strong style={{ color: hiddenTea.color }}>
                   {hiddenTea.hidden}
                 </strong>
