@@ -310,3 +310,5 @@ return {
   word: selectedWord.word,
   wordMeaning: selectedWord.meaning,
 };
+
+}
