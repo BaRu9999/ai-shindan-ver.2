@@ -79,7 +79,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "香ばしさとまろやかな甘みを楽しめる、ごほうび感のある組み合わせ。",
     productIcon: "🫖",
     price: "¥1551(税込)",
-    image:"houji cha type.png",
+    image:"/menu/houji cha type.png",
   },
   wakoucha: {
     name: "和紅茶",
@@ -97,7 +97,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "上品な香りとやさしい甘さが、気持ちに余白をつくる組み合わせ。",
     productIcon: "☕",
     price: "¥1243(税込)",
-    image:"wakoucha type.png",
+    image:"/menu/wakoucha type.png",
   },
   kuwacha: {
     name: "桑茶",
@@ -115,7 +115,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "からだにやさしく、満足感も大切にしたい日にぴったりの組み合わせ。",
     productIcon: "🌿",
     price: "¥2398(税込)",
-    image:"relax type.png",
+    image:"/menu/relax type.png",
   },
   biwa: {
     name: "枇杷の葉茶",
@@ -133,7 +133,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "すっきりした後味と涼やかな甘味で、気分を軽くする組み合わせ。",
     productIcon: "🍃",
     price: "¥1276(税込)",
-    image:"refresh type.png,
+    image:"/menu/refresh type.png",
   },
   rooibos: {
     name: "ルイボスティー",
@@ -151,7 +151,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "香ばしさとコクのある甘味で、満足感をゆっくり味わう組み合わせ。",
     productIcon: "🌱",
     price: "¥1397(税込)",
-    image: "beauty type.png",
+    image: "/menu/beauty type.png",
   },
 };
 
