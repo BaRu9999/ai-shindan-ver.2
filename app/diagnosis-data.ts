@@ -56,11 +56,11 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "落ち着いて物事を見つめ、自分のペースを大切にできるあなた。派手に主張しなくても、周りには自然と安心感が伝わっています。",
     caution:
       "頼られると断れず、気づかないうちに頑張りすぎることも。今日は少し、自分を甘やかしてよい日です。",
-    product: "抹茶ラテ ＋ 抹茶テリーヌ",
+    product: "抹茶ラテ ＋ 宇治抹茶パフェ",
     productNote:
       "濃厚な香りとほどよい甘さで、気持ちをゆっくり整える組み合わせ。",
     productIcon: "🍵",
-    price: "価格を設定してください",
+    price: "¥1529(税込)",
     image: null,
   },
   hojicha: {
@@ -74,11 +74,11 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "気取らず自然体で、人の緊張をほどくのが上手なあなた。あたたかな雰囲気に、つい本音を話したくなる人も多そうです。",
     caution:
       "周りを優先しすぎて、自分の疲れを後回しにしがち。香ばしい一杯で、まずはひと息つきましょう。",
-    product: "ほうじ茶ミルクティー ＋ 和パフェ",
+    product: "ほうじ茶キャラメルミルクティー ＋ ほうじ茶アイスと黒豆きな粉アイスパフェ",
     productNote:
       "香ばしさとまろやかな甘みを楽しめる、ごほうび感のある組み合わせ。",
     productIcon: "🫖",
-    price: "価格を設定してください",
+    price: "¥1551(税込)",
     image: null,
   },
   wakoucha: {
@@ -96,7 +96,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
     productNote:
       "上品な香りとやさしい甘さが、気持ちに余白をつくる組み合わせ。",
     productIcon: "☕",
-    price: "価格を設定してください",
+    price: "¥1243(税込)",
     image: null,
   },
   kuwacha: {
@@ -110,11 +110,11 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "無理なく続けられる心地よさを知っているあなた。小さな変化にも気づき、暮らしのバランスを取るのが得意です。",
     caution:
       "きちんとしようとするほど、予定外のことに疲れやすい面も。今日は完璧より心地よさを選んで。",
-    product: "桑茶 ＋ タニタカフェ御膳",
+    product: "リラックスハーブティー ＋ タニタコラボプレート　鰆の西京焼き",
     productNote:
       "からだにやさしく、満足感も大切にしたい日にぴったりの組み合わせ。",
     productIcon: "🌿",
-    price: "価格を設定してください",
+    price: "¥2398(税込)",
     image: null,
   },
   biwa: {
@@ -128,11 +128,11 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "肩の力が抜けていて、相手の話を自然に受け止められるあなた。穏やかですが、必要な時にはすっと前へ進めます。",
     caution:
       "合わせ上手な分、自分の希望が後になりがち。今日は『私はどうしたい？』を先に聞いてあげて。",
-    product: "枇杷の葉茶 ＋ 水わらび餅",
+    product: "リフレッシュハーブティー ＋ 水わらび餅",
     productNote:
       "すっきりした後味と涼やかな甘味で、気分を軽くする組み合わせ。",
     productIcon: "🍃",
-    price: "価格を設定してください",
+    price: "¥1276(税込)",
     image: null,
   },
   rooibos: {
@@ -146,7 +146,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "細かいことにとらわれず、場を明るくできるあなた。自分も周りも楽しめる選択を、自然に見つけられます。",
     caution:
       "元気に見られるぶん、弱音を飲み込むことも。香ばしい一杯と甘味で、心まで満たして。",
-    product: "ルイボスティー ＋ チーズプリン",
+    product: "ビューティーハーブティー ＋ 抹茶ティラマス",
     productNote:
       "香ばしさとコクのある甘味で、満足感をゆっくり味わう組み合わせ。",
     productIcon: "🌱",
