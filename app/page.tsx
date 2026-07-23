@@ -183,7 +183,7 @@ export default function Home() {
     advance(nextIndex);
   };
 
-  const saveCard = () => {
+  const saveCard = async () => {
     const canvas = document.createElement("canvas");
     canvas.width = 1080;
     canvas.height = 1440;
@@ -238,10 +238,57 @@ export default function Home() {
     ctx.fillText("今日の気分で、結果は少しずつ変わります。", 540, 1270);
     ctx.fillText("また別の日にも試してみてください。", 540, 1320);
 
-    const link = document.createElement("a");
-    link.download = "今日の和茶タイプ.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    const imageBlob = await new Promise<Blob | null>((resolve) => {
+  canvas.toBlob(resolve, "image/png");
+});
+
+if (!imageBlob) {
+  alert("画像を作成できませんでした。");
+  return;
+}
+
+const file = new File(
+  [imageBlob],
+  "今日の和茶タイプ診断.png",
+  { type: "image/png" },
+);
+
+// スマホで画像共有に対応している場合
+if (
+  navigator.share &&
+  navigator.canShare &&
+  navigator.canShare({ files: [file] })
+) {
+  try {
+    await navigator.share({
+      title: "今日の和茶タイプ診断",
+      text: `${mainTea.name}タイプになりました！`,
+      files: [file],
+    });
+    return;
+  } catch (error) {
+    // 共有画面を閉じた場合は何もしない
+    if ((error as Error).name === "AbortError") {
+      return;
+    }
+  }
+}
+
+// 共有機能が使えない端末用
+const imageUrl = URL.createObjectURL(imageBlob);
+const link = document.createElement("a");
+
+link.href = imageUrl;
+link.download = "今日の和茶タイプ診断.png";
+link.target = "_blank";
+
+document.body.appendChild(link);
+link.click();
+link.remove();
+
+window.setTimeout(() => {
+  URL.revokeObjectURL(imageUrl);
+}, 10_000);
   };
 
   return (
@@ -432,7 +479,7 @@ export default function Home() {
                 ) : (
                   <>
                     <span>{mainTea.productIcon}</span>
-                    <i>商品写真を設定できます</i>
+                   
                   </>
                 )}
               </div>
@@ -442,7 +489,7 @@ export default function Home() {
                 <p>{diagnosis.recommendationReason}</p>
                 <strong>{mainTea.price}</strong>
                 <span className="staff-note">
-                  ご注文の際、この画面をスタッフへお見せください
+                  ご注文前に是非参考にしてみてはどうでしょう♪
                 </span>
               </div>
             </section>
@@ -482,7 +529,7 @@ export default function Home() {
 
             <div className="result-actions">
               <button className="primary-button" onClick={saveCard}>
-                結果カードを保存する
+                結果カードを保存・共有する
                 <span>↓</span>
               </button>
               <button className="secondary-button" onClick={start}>
