@@ -79,7 +79,7 @@ export const teaTypes: Record<TeaKey, TeaType> = {
       "香ばしさとまろやかな甘みを楽しめる、ごほうび感のある組み合わせ。",
     productIcon: "🫖",
     price: "¥1551(税込)",
-    image:"houjicha",
+    image:"houji cha type.png",
   },
   wakoucha: {
     name: "和紅茶",
